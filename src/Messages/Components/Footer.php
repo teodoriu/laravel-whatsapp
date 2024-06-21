@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components;
+namespace Teodoriu\Whatsapp\Messages\Components;
 
-use MissaelAnda\Whatsapp\Messages\Message;
+use Teodoriu\Whatsapp\Messages\Message;
 
 /**
  * @property array<Message> $parameters

@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Events\Metadata;
+namespace Teodoriu\Whatsapp\Events\Metadata;
 
-use MissaelAnda\Whatsapp\Utils;
+use Teodoriu\Whatsapp\Utils;
 
 class MessageError
 {

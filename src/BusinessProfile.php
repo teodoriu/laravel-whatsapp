@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
 use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;

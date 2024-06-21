@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages;
+namespace Teodoriu\Whatsapp\Messages;
 
 abstract class WhatsappMessage implements Message
 {

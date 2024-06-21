@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Enums;
+namespace Teodoriu\Whatsapp\Messages\Enums;
 
 enum PhoneType: string
 {

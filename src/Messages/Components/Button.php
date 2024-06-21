@@ -1,9 +1,9 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components;
+namespace Teodoriu\Whatsapp\Messages\Components;
 
-use MissaelAnda\Whatsapp\Messages\Enums\ButtonType;
-use MissaelAnda\Whatsapp\Messages\Message;
+use Teodoriu\Whatsapp\Messages\Enums\ButtonType;
+use Teodoriu\Whatsapp\Messages\Message;
 
 class Button implements Message
 {

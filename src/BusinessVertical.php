@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
 enum BusinessVertical: string
 {

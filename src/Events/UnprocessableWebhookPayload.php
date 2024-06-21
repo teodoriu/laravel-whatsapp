@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Events;
+namespace Teodoriu\Whatsapp\Events;
 
 use Exception;
 use Illuminate\Foundation\Events\Dispatchable;

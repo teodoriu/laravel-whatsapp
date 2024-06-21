@@ -1,13 +1,13 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages;
+namespace Teodoriu\Whatsapp\Messages;
 
-use MissaelAnda\Whatsapp\Messages\Components\Body;
-use MissaelAnda\Whatsapp\Messages\Components\Button;
-use MissaelAnda\Whatsapp\Messages\Components\Currency;
-use MissaelAnda\Whatsapp\Messages\Components\DateTime;
-use MissaelAnda\Whatsapp\Messages\Components\Footer;
-use MissaelAnda\Whatsapp\Messages\Components\Header;
+use Teodoriu\Whatsapp\Messages\Components\Body;
+use Teodoriu\Whatsapp\Messages\Components\Button;
+use Teodoriu\Whatsapp\Messages\Components\Currency;
+use Teodoriu\Whatsapp\Messages\Components\DateTime;
+use Teodoriu\Whatsapp\Messages\Components\Footer;
+use Teodoriu\Whatsapp\Messages\Components\Header;
 
 /**
  * @property array<Button> $buttons

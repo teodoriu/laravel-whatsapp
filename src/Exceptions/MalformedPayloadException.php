@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Exceptions;
+namespace Teodoriu\Whatsapp\Exceptions;
 
 class MalformedPayloadException extends \Exception
 {

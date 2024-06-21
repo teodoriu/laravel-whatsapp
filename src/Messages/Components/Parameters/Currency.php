@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components\Parameters;
+namespace Teodoriu\Whatsapp\Messages\Components\Parameters;
 
-use MissaelAnda\Whatsapp\Messages\Components\Currency as ComponentsCurrency;
+use Teodoriu\Whatsapp\Messages\Components\Currency as ComponentsCurrency;
 
 class Currency extends ComponentsCurrency
 {

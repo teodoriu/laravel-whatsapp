@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages;
+namespace Teodoriu\Whatsapp\Messages;
 
-use MissaelAnda\Whatsapp\Messages\Enums\MediaType;
+use Teodoriu\Whatsapp\Messages\Enums\MediaType;
 
 class MediaMessage extends WhatsappMessage
 {

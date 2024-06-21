@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages;
+namespace Teodoriu\Whatsapp\Messages;
 
-use MissaelAnda\Whatsapp\Messages\Components\Contact;
+use Teodoriu\Whatsapp\Messages\Components\Contact;
 
 class ContactsMessage extends WhatsappMessage
 {

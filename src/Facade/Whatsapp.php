@@ -1,24 +1,24 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Facade;
+namespace Teodoriu\Whatsapp\Facade;
 
-use MissaelAnda\Whatsapp\Whatsapp as ConcreteWhatsapp;
+use Teodoriu\Whatsapp\Whatsapp as ConcreteWhatsapp;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static array send(string|array<string> $phones, \MissaelAnda\Whatsapp\WhatsappMessage $message)
- * @method static \MissaelAnda\Whatsapp\Whatsapp client(string $numberId, string $token)
- * @method static \MissaelAnda\Whatsapp\Whatsapp token(string $token)
- * @method static \MissaelAnda\Whatsapp\Whatsapp numberId(string $numberId)
- * @method static \MissaelAnda\Whatsapp\Whatsapp numberName(string $name)
- * @method static \MissaelAnda\Whatsapp\Whatsapp defaultNumber()
+ * @method static array send(string|array<string> $phones, \Teodoriu\Whatsapp\WhatsappMessage $message)
+ * @method static \Teodoriu\Whatsapp\Whatsapp client(string $numberId, string $token)
+ * @method static \Teodoriu\Whatsapp\Whatsapp token(string $token)
+ * @method static \Teodoriu\Whatsapp\Whatsapp numberId(string $numberId)
+ * @method static \Teodoriu\Whatsapp\Whatsapp numberName(string $name)
+ * @method static \Teodoriu\Whatsapp\Whatsapp defaultNumber()
  * @method static bool markRead(string $messageId)
- * @method static \MissaelAnda\Whatsapp\WhatsappMedia|string uploadMedia(string $file, string $type = null, bool $retrieveAllData = true)
- * @method static \MissaelAnda\Whatsapp\WhatsappMedia getMedia(string $mediaId, bool $download = false)
- * @method static bool deleteMedia(\MissaelAnda\Whatsapp\WhatsappMedia|string $id)
- * @method static \MissaelAnda\Whatsapp\WhatsappMedia downloadMedia(string|\MissaelAnda\Whatsapp\WhatsappMedia $media)
- * @method static \MissaelAnda\Whatsapp\BusinessProfile getProfile()
- * @method static bool updateProfile(array|\MissaelAnda\Whatsapp\BusinessProfile $data)
+ * @method static \Teodoriu\Whatsapp\WhatsappMedia|string uploadMedia(string $file, string $type = null, bool $retrieveAllData = true)
+ * @method static \Teodoriu\Whatsapp\WhatsappMedia getMedia(string $mediaId, bool $download = false)
+ * @method static bool deleteMedia(\Teodoriu\Whatsapp\WhatsappMedia|string $id)
+ * @method static \Teodoriu\Whatsapp\WhatsappMedia downloadMedia(string|\Teodoriu\Whatsapp\WhatsappMedia $media)
+ * @method static \Teodoriu\Whatsapp\BusinessProfile getProfile()
+ * @method static bool updateProfile(array|\Teodoriu\Whatsapp\BusinessProfile $data)
  */
 class Whatsapp extends Facade
 {

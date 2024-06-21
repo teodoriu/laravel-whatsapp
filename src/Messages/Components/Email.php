@@ -1,9 +1,9 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components;
+namespace Teodoriu\Whatsapp\Messages\Components;
 
-use MissaelAnda\Whatsapp\Messages\Enums\ContactInfoType;
-use MissaelAnda\Whatsapp\Messages\Message;
+use Teodoriu\Whatsapp\Messages\Enums\ContactInfoType;
+use Teodoriu\Whatsapp\Messages\Message;
 
 class Email implements Message
 {

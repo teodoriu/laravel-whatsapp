@@ -13,7 +13,7 @@ A Laravel package for the [Whatsapp Business Cloud API](https://developers.faceb
 ## Installation
 
 ```bash
-composer require missael-anda/laravel-whatsapp
+composer require teodoriu/laravel-whatsapp
 ```
 
 ## Configuration
@@ -24,7 +24,7 @@ For further configuration, please see [config/whatsapp.php](config/whatsapp.php)
 by copying it to your local `config` directory or by defining the environment variables used in the config file:
 
 ```bash
-php artisan vendor:publish --provider="MissaelAnda\Whatsapp\WhatsappServiceProvider" --tag=config
+php artisan vendor:publish --provider="Teodoriu\Whatsapp\WhatsappServiceProvider" --tag=config
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ php artisan vendor:publish --provider="MissaelAnda\Whatsapp\WhatsappServiceProvi
 You can send a messages to a single or multiple clients.
 
 ```php
-use MissaelAnda\Whatsapp\Messages;
+use Teodoriu\Whatsapp\Messages;
 
 Whatsapp::send('13333333333', Messages\TemplateMessage::create()
     ->name('one_time_password')
@@ -45,7 +45,7 @@ Whatsapp::send('13333333333', Messages\TemplateMessage::create()
 You can also respond to other messages in the conversation with any message type (except reaction message):
 
 ```php
-use MissaelAnda\Whatsapp\Messages\TextMessage;
+use Teodoriu\Whatsapp\Messages\TextMessage;
 
 Whatsapp::send('13333333333', TextMessage::create('Answer to your message')->respondTo('wamid.91n23...'));
 ```
@@ -74,10 +74,10 @@ Also you can set the token manually with `Whatsapp::token()` or you can set both
 You can also [manage media](https://developers.facebook.com/docs/whatsapp/cloud-api/reference/media) with:
 
 ```php
-Whatsapp::uploadMedia(string $file, string $type = null, bool $retrieveAllData = true): \MissaelAnda\Whatsapp\WhatsappMedia|string
-Whatsapp::getMedia(string $mediaId, bool $download = false): \MissaelAnda\Whatsapp\WhatsappMedia
-Whatsapp::deleteMedia(\MissaelAnda\Whatsapp\WhatsappMedia|string $id): bool
-Whatsapp::downloadMedia(string|\MissaelAnda\Whatsapp\WhatsappMedia $media): \MissaelAnda\Whatsapp\WhatsappMedia
+Whatsapp::uploadMedia(string $file, string $type = null, bool $retrieveAllData = true): \Teodoriu\Whatsapp\WhatsappMedia|string
+Whatsapp::getMedia(string $mediaId, bool $download = false): \Teodoriu\Whatsapp\WhatsappMedia
+Whatsapp::deleteMedia(\Teodoriu\Whatsapp\WhatsappMedia|string $id): bool
+Whatsapp::downloadMedia(string|\Teodoriu\Whatsapp\WhatsappMedia $media): \Teodoriu\Whatsapp\WhatsappMedia
 ```
 
 ### Business Profile
@@ -85,8 +85,8 @@ Whatsapp::downloadMedia(string|\MissaelAnda\Whatsapp\WhatsappMedia $media): \Mis
 There are also two ways to manage the number's business profile:
 
 ```php
-Whatsapp::getProfile(): \MissaelAnda\Whatsapp\BusinessProfile
-Whatsapp::updateProfile(\MissaelAnda\Whatsapp\BusinessProfile|array $data): bool
+Whatsapp::getProfile(): \Teodoriu\Whatsapp\BusinessProfile
+Whatsapp::updateProfile(\Teodoriu\Whatsapp\BusinessProfile|array $data): bool
 ```
 
 ## Webhooks
@@ -94,16 +94,16 @@ Whatsapp::updateProfile(\MissaelAnda\Whatsapp\BusinessProfile|array $data): bool
 Whatsapp allows you to subscribe to [webhooks](https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks) to receive notifications and most importantly messages from your customers. Both subscriptions and notifications are handled out of the box in the route whatsapp/webhook (you can change the path with the WHATSAPP_WEBHOOK_PATH env variable).
 
 When a you register the webhook meta will send a subscription, this requires a verification token that you set, you will need to set it with WHATSAPP_WEBHOOK_VERIFY_TOKEN env setting.
-When receiving a subscription intent a `MissaelAnda\Whatsapp\Events\SubscriptionIntentReceived` event will be fired, if the request is successful the `MissaelAnda\Whatsapp\Events\SuccessfullySubscribed` event will fire too.
+When receiving a subscription intent a `Teodoriu\Whatsapp\Events\SubscriptionIntentReceived` event will be fired, if the request is successful the `Teodoriu\Whatsapp\Events\SuccessfullySubscribed` event will fire too.
 
-On the other hand notifications will trigger a `MissaelAnda\Whatsapp\Events\WebhookReceived` event with all the payload, if you want to protect this route verifying the sha256 signature you must set the WHATSAPP_WEBHOOK_SIGNATURE_VERIFY to true and the WHATSAPP_SECRET to your whatsapp's app secret.
+On the other hand notifications will trigger a `Teodoriu\Whatsapp\Events\WebhookReceived` event with all the payload, if you want to protect this route verifying the sha256 signature you must set the WHATSAPP_WEBHOOK_SIGNATURE_VERIFY to true and the WHATSAPP_SECRET to your whatsapp's app secret.
 
-If the payload is invalid a `MissaelAnda\Whatsapp\Events\UnprocessableWebhookPayload` event will be fired with the exception describing the error.
+If the payload is invalid a `Teodoriu\Whatsapp\Events\UnprocessableWebhookPayload` event will be fired with the exception describing the error.
 
 If you want to know when a specific notification is fired you can subscribe to this events:
 
-- `MissaelAnda\Whatsapp\Events\WebhookEntry` generic entry
-- `MissaelAnda\Whatsapp\Events\MessagesReceived` for the `messages` entry
+- `Teodoriu\Whatsapp\Events\WebhookEntry` generic entry
+- `Teodoriu\Whatsapp\Events\MessagesReceived` for the `messages` entry
 
 ## Notification Channel
 
@@ -128,9 +128,9 @@ Now just create a notification that implements the `toWhatsapp()` function:
 
 ```php
 //...
-use MissaelAnda\Whatsapp\Messages\TemplateMessage;
-use MissaelAnda\Whatsapp\Messages\Components\Parameters;
-use MissaelAnda\Whatsapp\WhatsappChannel;
+use Teodoriu\Whatsapp\Messages\TemplateMessage;
+use Teodoriu\Whatsapp\Messages\Components\Parameters;
+use Teodoriu\Whatsapp\WhatsappChannel;
 
 class VerificationCode extends Notification
 {
@@ -161,7 +161,7 @@ class VerificationCode extends Notification
      * Get the message representation of the notification.
      *
      * @param  mixed  $notifiable
-     * @return \MissaelAnda\Whatsapp\Messages\WhatsappMessage
+     * @return \Teodoriu\Whatsapp\Messages\WhatsappMessage
      */
     public function toWhatsapp($notifiable)
     {

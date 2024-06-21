@@ -1,10 +1,10 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Events;
+namespace Teodoriu\Whatsapp\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use MissaelAnda\Whatsapp\Exceptions\MessageRequestException;
+use Teodoriu\Whatsapp\Exceptions\MessageRequestException;
 
 class MessageFailed
 {

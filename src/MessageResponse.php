@@ -1,11 +1,11 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
-use MissaelAnda\Whatsapp\Exceptions\MessageRequestException;
+use Teodoriu\Whatsapp\Exceptions\MessageRequestException;
 use Illuminate\Http\Client\Response as ClientResponse;
-use MissaelAnda\Whatsapp\Events\MessageFailed;
-use MissaelAnda\Whatsapp\Events\MessageSent;
+use Teodoriu\Whatsapp\Events\MessageFailed;
+use Teodoriu\Whatsapp\Events\MessageSent;
 
 class MessageResponse
 {

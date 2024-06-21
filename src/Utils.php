@@ -1,9 +1,9 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
 use Illuminate\Support\Arr;
-use MissaelAnda\Whatsapp\Exceptions\MalformedPayloadException;
+use Teodoriu\Whatsapp\Exceptions\MalformedPayloadException;
 
 abstract class Utils
 {

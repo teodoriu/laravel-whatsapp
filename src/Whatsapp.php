@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Http\Client\PendingRequest;
@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use MissaelAnda\Whatsapp\Events\SendingMessage;
-use MissaelAnda\Whatsapp\Exceptions\MessageRequestException;
-use MissaelAnda\Whatsapp\Exceptions\MediaNotFoundException;
-use MissaelAnda\Whatsapp\Exceptions\PhoneNumberNameNotFound;
-use MissaelAnda\Whatsapp\Messages\WhatsappMessage;
+use Teodoriu\Whatsapp\Events\SendingMessage;
+use Teodoriu\Whatsapp\Exceptions\MessageRequestException;
+use Teodoriu\Whatsapp\Exceptions\MediaNotFoundException;
+use Teodoriu\Whatsapp\Exceptions\PhoneNumberNameNotFound;
+use Teodoriu\Whatsapp\Messages\WhatsappMessage;
 
 class Whatsapp
 {

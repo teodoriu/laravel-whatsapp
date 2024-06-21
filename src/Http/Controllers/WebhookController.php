@@ -1,20 +1,20 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Http\Controllers;
+namespace Teodoriu\Whatsapp\Http\Controllers;
 
-use MissaelAnda\Whatsapp\Http\Middleware\VerifyWebhookSignature;
+use Teodoriu\Whatsapp\Http\Middleware\VerifyWebhookSignature;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
-use MissaelAnda\Whatsapp\Events\SubscriptionIntentReceived;
-use MissaelAnda\Whatsapp\Events\SuccessfullySubscribed;
-use MissaelAnda\Whatsapp\Events\UnprocessableWebhookPayload;
-use MissaelAnda\Whatsapp\Events\WebhookEntry;
-use MissaelAnda\Whatsapp\Events\WebhookReceived;
-use MissaelAnda\Whatsapp\Exceptions\InvalidWebhookEntryException;
-use MissaelAnda\Whatsapp\Exceptions\MalformedPayloadException;
-use MissaelAnda\Whatsapp\Utils;
+use Teodoriu\Whatsapp\Events\SubscriptionIntentReceived;
+use Teodoriu\Whatsapp\Events\SuccessfullySubscribed;
+use Teodoriu\Whatsapp\Events\UnprocessableWebhookPayload;
+use Teodoriu\Whatsapp\Events\WebhookEntry;
+use Teodoriu\Whatsapp\Events\WebhookReceived;
+use Teodoriu\Whatsapp\Exceptions\InvalidWebhookEntryException;
+use Teodoriu\Whatsapp\Exceptions\MalformedPayloadException;
+use Teodoriu\Whatsapp\Utils;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Http\Middleware;
+namespace Teodoriu\Whatsapp\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

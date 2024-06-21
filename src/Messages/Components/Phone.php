@@ -1,10 +1,10 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components;
+namespace Teodoriu\Whatsapp\Messages\Components;
 
-use MissaelAnda\Whatsapp\Messages\Enums\PhoneType;
-use MissaelAnda\Whatsapp\Messages\Message;
-use MissaelAnda\Whatsapp\Utils;
+use Teodoriu\Whatsapp\Messages\Enums\PhoneType;
+use Teodoriu\Whatsapp\Messages\Message;
+use Teodoriu\Whatsapp\Utils;
 
 class Phone implements Message
 {

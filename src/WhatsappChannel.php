@@ -1,10 +1,10 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
-use MissaelAnda\Whatsapp\Facade\Whatsapp;
-use MissaelAnda\Whatsapp\Exceptions\InvalidMessageException;
-use MissaelAnda\Whatsapp\Messages\WhatsappMessage;
+use Teodoriu\Whatsapp\Facade\Whatsapp;
+use Teodoriu\Whatsapp\Exceptions\InvalidMessageException;
+use Teodoriu\Whatsapp\Messages\WhatsappMessage;
 use Illuminate\Notifications\Notification;
 
 class WhatsappChannel

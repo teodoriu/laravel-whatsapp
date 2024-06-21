@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;

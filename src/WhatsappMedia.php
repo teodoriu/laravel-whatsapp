@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp;
+namespace Teodoriu\Whatsapp;
 
-use MissaelAnda\Whatsapp\Facade\Whatsapp;
+use Teodoriu\Whatsapp\Facade\Whatsapp;
 
 class WhatsappMedia
 {

@@ -1,5 +1,5 @@
 {
-    "name": "missael-anda/laravel-whatsapp",
+    "name": "teodoriu/laravel-whatsapp",
     "description": "A Whatsapp Business Cloud API wrapper for Laravel.",
     "keywords": [
         "laravel",
@@ -12,30 +12,30 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "MissaelAnda\\Whatsapp\\": "src/"
+            "Teodoriu\\Whatsapp\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Missael H. Anda",
-            "email": "missael.anda@gmail.com"
+            "name": "Teodor B.",
+            "email": "teodoriu@pm.me"
         }
     ],
     "require": {
         "php": "^8.1",
-        "illuminate/contracts": "^9.0 || ^10.0",
-        "illuminate/support": "^9.0 || ^10.0",
-        "illuminate/http": "^9.0 || ^10.0",
-        "illuminate/routing": "^9.0 || ^10.0",
-        "illuminate/events": "^9.0 || ^10.0"
+        "illuminate/contracts": "^9.0 || ^10.0 || ^11.0",
+        "illuminate/support": "^9.0 || ^10.0 || ^11.0",
+        "illuminate/http": "^9.0 || ^10.0 || ^11.0",
+        "illuminate/routing": "^9.0 || ^10.0 || ^11.0",
+        "illuminate/events": "^9.0 || ^10.0 || ^11.0"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "MissaelAnda\\Whatsapp\\WhatsappServiceProvider"
+                "Teodoriu\\Whatsapp\\WhatsappServiceProvider"
             ],
             "aliases": {
-                "Whatsapp": "MissaelAnda\\Whatsapp\\Facade\\Whatsapp"
+                "Whatsapp": "Teodoriu\\Whatsapp\\Facade\\Whatsapp"
             }
         }
     }

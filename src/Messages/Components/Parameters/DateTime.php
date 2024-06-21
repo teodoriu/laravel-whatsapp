@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components\Parameters;
+namespace Teodoriu\Whatsapp\Messages\Components\Parameters;
 
-use MissaelAnda\Whatsapp\Messages\Components\DateTime as ComponentsDateTime;
+use Teodoriu\Whatsapp\Messages\Components\DateTime as ComponentsDateTime;
 
 class DateTime extends ComponentsDateTime
 {

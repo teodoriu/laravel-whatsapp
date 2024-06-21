@@ -1,10 +1,10 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components;
+namespace Teodoriu\Whatsapp\Messages\Components;
 
 use Illuminate\Support\Carbon;
-use MissaelAnda\Whatsapp\Messages\Message;
-use MissaelAnda\Whatsapp\Utils;
+use Teodoriu\Whatsapp\Messages\Message;
+use Teodoriu\Whatsapp\Utils;
 
 class Contact implements Message
 {

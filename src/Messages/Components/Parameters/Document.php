@@ -1,8 +1,8 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Messages\Components\Parameters;
+namespace Teodoriu\Whatsapp\Messages\Components\Parameters;
 
-use MissaelAnda\Whatsapp\Messages\Message;
+use Teodoriu\Whatsapp\Messages\Message;
 
 class Document implements Message
 {

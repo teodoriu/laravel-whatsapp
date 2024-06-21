@@ -1,16 +1,16 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Events;
+namespace Teodoriu\Whatsapp\Events;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
-use MissaelAnda\Whatsapp\Events\Metadata\Contact;
-use MissaelAnda\Whatsapp\Events\Metadata\Error;
-use MissaelAnda\Whatsapp\Events\Metadata\Message;
-use MissaelAnda\Whatsapp\Events\Metadata\MessageContext;
-use MissaelAnda\Whatsapp\Events\Metadata\MessageError;
-use MissaelAnda\Whatsapp\Events\Metadata\Status;
-use MissaelAnda\Whatsapp\Utils;
+use Teodoriu\Whatsapp\Events\Metadata\Contact;
+use Teodoriu\Whatsapp\Events\Metadata\Error;
+use Teodoriu\Whatsapp\Events\Metadata\Message;
+use Teodoriu\Whatsapp\Events\Metadata\MessageContext;
+use Teodoriu\Whatsapp\Events\Metadata\MessageError;
+use Teodoriu\Whatsapp\Events\Metadata\Status;
+use Teodoriu\Whatsapp\Utils;
 
 class MessagesReceived extends WebhookEntry
 {

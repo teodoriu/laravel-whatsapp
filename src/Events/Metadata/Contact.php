@@ -1,6 +1,6 @@
 <?php
 
-namespace MissaelAnda\Whatsapp\Events\Metadata;
+namespace Teodoriu\Whatsapp\Events\Metadata;
 
 class Contact
 {
