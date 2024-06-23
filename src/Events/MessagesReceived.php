@@ -10,6 +10,7 @@ use Teodoriu\Whatsapp\Events\Metadata\Message;
 use Teodoriu\Whatsapp\Events\Metadata\MessageContext;
 use Teodoriu\Whatsapp\Events\Metadata\MessageError;
 use Teodoriu\Whatsapp\Events\Metadata\Status;
+use Teodoriu\Whatsapp\Exceptions\MalformedPayloadException;
 use Teodoriu\Whatsapp\Utils;
 
 class MessagesReceived extends WebhookEntry
@@ -32,7 +33,10 @@ class MessagesReceived extends WebhookEntry
      */
     public Collection $statuses;
 
-    protected function afterBuild()
+    /**
+     * @throws MalformedPayloadException
+     */
+    protected function afterBuild(): void
     {
         $this->phoneNumberId = Utils::extract($this->data, 'metadata.phone_number_id');
         $this->displayPhoneNumber = Utils::extract($this->data, 'metadata.display_phone_number');
@@ -43,7 +47,10 @@ class MessagesReceived extends WebhookEntry
         $this->buildStatuses();
     }
 
-    protected function buildStatuses()
+    /**
+     * @throws MalformedPayloadException
+     */
+    protected function buildStatuses(): void
     {
         $this->statuses = collect(Utils::extract($this->data, 'statuses', false))->map(fn ($status) => new Status(
             Utils::extract($status, 'id'),
@@ -67,7 +74,10 @@ class MessagesReceived extends WebhookEntry
         ));
     }
 
-    protected function buildContacts()
+    /**
+     * @throws MalformedPayloadException
+     */
+    protected function buildContacts(): void
     {
         $this->contacts = collect(Utils::extract($this->data, 'contacts', false))->map(fn ($contact) => new Contact(
             Utils::extract($contact, 'wa_id'),
@@ -75,7 +85,10 @@ class MessagesReceived extends WebhookEntry
         ));
     }
 
-    protected function buildMessages()
+    /**
+     * @throws MalformedPayloadException
+     */
+    protected function buildMessages(): void
     {
         $this->messages = collect(Utils::extract($this->data, 'messages', false))->map(fn ($message) => new Message(
             Utils::extract($message, 'id'),

@@ -240,3 +240,8 @@ return [
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
+## Documentation
+
+https://developers.facebook.com/docs/whatsapp/cloud-api
+https://developers.facebook.com/docs/whatsapp/cloud-api/reference/messages#media-messages
