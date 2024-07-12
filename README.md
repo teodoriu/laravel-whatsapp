@@ -50,6 +50,15 @@ use Teodoriu\Whatsapp\Messages\TextMessage;
 Whatsapp::send('13333333333', TextMessage::create('Answer to your message')->respondTo('wamid.91n23...'));
 ```
 
+Send template messages
+```php
+Whatsapp::send(
+  phones: 13333333333,
+  message: FlowMessage::create()
+  ->name('template_name')
+  ->language('language_code')
+);
+```
 and you can mark messages as read:
 
 ```php
