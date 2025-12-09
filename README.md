@@ -65,6 +65,32 @@ and you can mark messages as read:
 Whatsapp::markRead('wamid.91n23...');
 ```
 
+### Marketing Messages API
+
+You can send messages through the WhatsApp Marketing Messages API using the `sendMarketing()` method. This endpoint is specifically designed for marketing template messages and provides enhanced metrics and performance insights.
+
+```php
+use Teodoriu\Whatsapp\Messages;
+
+// Send a marketing template message
+Whatsapp::sendMarketing('13333333333', Messages\TemplateMessage::create()
+    ->name('marketing_template_name')
+    ->language('en_US')
+    ->body(Messages\Components\Body::create([
+        Messages\Components\Parameters\Text::create('Your marketing content'),
+    ])));
+
+// Send to multiple recipients
+Whatsapp::sendMarketing(
+    ['13333333333', '14444444444'],
+    Messages\TemplateMessage::create()
+        ->name('marketing_template_name')
+        ->language('en_US')
+);
+```
+
+**Note:** The Marketing Messages API requires your WhatsApp Business Account to be registered on the Cloud API and you must accept Meta's Marketing Messages API Terms of Service in your Meta Business Manager account.
+
 By default the messages will be sent from the `default_number_id`, if you want to use other you can use `Whatsapp::numberId()` or add the alias to the config's `numbers` list and use `Whatsapp::numberName()`.
 Also you can set the token manually with `Whatsapp::token()` or you can set both the token and numberId you can use `Whatsapp::client()`
 

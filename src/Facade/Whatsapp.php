@@ -10,6 +10,7 @@ use Teodoriu\Whatsapp\WhatsappMedia;
 
 /**
  * @method static array send(string|array $phones, WhatsappMessage $message)
+ * @method static array sendMarketing(string|array $phones, WhatsappMessage $message)
  * @method static ConcreteWhatsapp client(string $numberId, string $token)
  * @method static ConcreteWhatsapp token(string $token)
  * @method static ConcreteWhatsapp numberId(string $numberId)

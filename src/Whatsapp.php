@@ -21,7 +21,8 @@ class Whatsapp
 {
     public const WHATSAPP_API_URL = 'https://graph.facebook.com/v{{VERSION}}';
     public const WHATSAPP_MESSAGE_API = 'messages';
-    public const WHATSAPP_API_VERSION = '17.0';
+    public const WHATSAPP_MARKETING_MESSAGE_API = 'marketing_messages';
+    public const WHATSAPP_API_VERSION = '24.0';
 
     public function __construct(
         protected readonly ?string $numberId,
@@ -94,6 +95,31 @@ class Whatsapp
             return $this->sendMessage(Arr::wrap($phones)[0], $message);
         } else {
             return $this->sendMassMessage($phones, $message);
+        }
+    }
+
+    /**
+     * Send messages through the WhatsApp Marketing Messages API.
+     * This endpoint is specifically designed for marketing template messages.
+     * 
+     * @param string|array $phones The phone number(s) to send the message to
+     * @param WhatsappMessage $message The message to send (typically a TemplateMessage)
+     * @return MessageResponse|array<MessageResponse|MessageRequestException>
+     * 
+     * @throws MessageRequestException
+     */
+    public function sendMarketing(string|array $phones, WhatsappMessage $message): MessageResponse|array
+    {
+        if (empty($this->numberId)) {
+            throw new \Exception('The number id is required.');
+        }
+
+        SendingMessage::dispatch($this->numberId, (array)$phones, $message);
+
+        if (is_string($phones) || count($phones) === 1) {
+            return $this->sendMarketingMessage(Arr::wrap($phones)[0], $message);
+        } else {
+            return $this->sendMassMarketingMessage($phones, $message);
         }
     }
 
@@ -237,6 +263,38 @@ class Whatsapp
     {
         collect($this->request()->pool(function (Pool $pool) use ($phones, $message) {
             $url = $this->buildApiEndpoint('messages');
+
+            foreach ($phones as $phone) {
+                $pool->post($url, $this->buildMessage($phone, $message));
+            }
+        }))->map(function ($response) {
+            try {
+                return MessageResponse::build($response);
+            } catch (MessageRequestException $e) {
+                return $e;
+            }
+        })->toArray();
+    }
+
+    protected function sendMarketingMessage(string $phone, WhatsappMessage $message): MessageResponse
+    {
+        $response = $this->sendRequest(
+            $this->buildApiEndpoint(static::WHATSAPP_MARKETING_MESSAGE_API),
+            'post',
+            $this->buildMessage($phone, $message)
+        );
+
+        return MessageResponse::build($response);
+    }
+
+    /**
+     * @param  string[] $phones
+     * @return array<MessageResponse|MessageRequestException>
+     */
+    protected function sendMassMarketingMessage(array $phones, WhatsappMessage $message)
+    {
+        collect($this->request()->pool(function (Pool $pool) use ($phones, $message) {
+            $url = $this->buildApiEndpoint(static::WHATSAPP_MARKETING_MESSAGE_API);
 
             foreach ($phones as $phone) {
                 $pool->post($url, $this->buildMessage($phone, $message));
