@@ -81,7 +81,7 @@ class MessagesReceived extends WebhookEntry
     {
         $this->contacts = collect(Utils::extract($this->data, 'contacts', false))->map(fn ($contact) => new Contact(
             Utils::extract($contact, 'wa_id'),
-            Utils::extract($contact, 'profile.name')
+            Utils::extract($contact, 'profile.name', false) ?: ''
         ));
     }
 
