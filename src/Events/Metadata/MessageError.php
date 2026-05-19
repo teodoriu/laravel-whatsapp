@@ -20,11 +20,11 @@ class MessageError
      */
     public static function fromPayload(array $payload): array
     {
-        return collect($payload['errors'] ?? [])->map(fn () => new static(
-            Utils::extract($payload, 'title'),
-            Utils::extract($payload, 'code'),
-            $payload['message'] ?? null,
-            $payload['error_data'] ?? null,
+        return collect($payload['errors'] ?? [])->map(fn ($error) => new static(
+            Utils::extract($error, 'title'),
+            Utils::extract($error, 'code'),
+            $error['message'] ?? null,
+            $error['error_data'] ?? null,
         ))->all();
     }
 }
