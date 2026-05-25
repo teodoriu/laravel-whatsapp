@@ -10,12 +10,12 @@ class MessageContext
         /**
          * The WhatsApp ID for the customer who replied to an inbound message.
          */
-        public string $from,
+        public ?string $from,
 
         /**
          * The message ID for the sent message for an inbound reply.
          */
-        public string $id,
+        public ?string $id,
 
         /**
          * et to true if the message received by the business has been forwarded.
@@ -49,8 +49,8 @@ class MessageContext
 
         $context = $payload['context'];
         return new static(
-            Utils::extract($context, 'from'),
-            Utils::extract($context, 'id'),
+            Utils::extract($context, 'from', false) ?? $payload['from'] ?? null,
+            Utils::extract($context, 'id', false) ?? $payload['id'] ?? null,
             $context['forwarded'] ?? false,
             $context['frequently_forwarded'] ?? false,
             $context['referred_product'] ?? null,
