@@ -2,7 +2,6 @@
 
 namespace Teodoriu\Whatsapp\Http\Controllers;
 
-use Teodoriu\Whatsapp\Http\Middleware\VerifyWebhookSignature;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -20,16 +19,9 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 class WebhookController extends Controller
 {
-    public function __construct()
-    {
-        if (Config::get('whatsapp.webhook.verify_signature')) {
-            $this->middleware(VerifyWebhookSignature::class)->only('handle');
-        }
-    }
-
     /**
      * Verification request
-     * 
+     *
      * @link https://developers.facebook.com/docs/graph-api/webhooks/getting-started#verification-requests
      */
     public function subscribe(Request $request)
