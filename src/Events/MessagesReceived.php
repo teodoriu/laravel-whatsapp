@@ -80,7 +80,7 @@ class MessagesReceived extends WebhookEntry
     protected function buildContacts(): void
     {
         $this->contacts = collect(Utils::extract($this->data, 'contacts', false))->map(fn ($contact) => new Contact(
-            Utils::extract($contact, 'wa_id'),
+            Utils::extract($contact, 'wa_id', false) ?? Utils::extract($contact, 'user_id', false),
             Utils::extract($contact, 'profile.name', false) ?: ''
         ));
     }
